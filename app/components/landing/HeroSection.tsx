@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion"; // Disabled for deployment
 import { Link } from "@remix-run/react";
 import { useUser } from "@clerk/remix";
 import { Button } from "~/components/ui/Button";

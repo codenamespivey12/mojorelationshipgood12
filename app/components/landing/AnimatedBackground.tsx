@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion"; // Disabled for deployment
 
 export function AnimatedBackground() {
   // Generate consistent particle positions

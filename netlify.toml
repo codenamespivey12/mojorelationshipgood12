@@ -5,7 +5,14 @@
 
 [functions]
   node_bundler = "esbuild"
-  external_node_modules = ["@netlify/remix-adapter"]
+  external_node_modules = [
+    "@netlify/remix-adapter",
+    "@mui/material",
+    "@emotion/react",
+    "@emotion/styled",
+    "framer-motion",
+    "@mui/icons-material"
+  ]
   included_files = ["node_modules/deepmerge/**"]
 
 [[redirects]]
