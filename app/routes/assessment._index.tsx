@@ -11,7 +11,7 @@ export default function AssessmentIndex() {
           This comprehensive assessment will help you understand your relationship patterns across 5 key areas.
         </p>
       </div>
-      
+
       <div className="bg-white/10 backdrop-blur-sm rounded-lg shadow-md p-8">
         <h2 className="text-xl font-semibold mb-4 text-white">Assessment Overview</h2>
         <div className="space-y-4">
@@ -36,10 +36,10 @@ export default function AssessmentIndex() {
             <span className="text-white">Additional Relationship Factors</span>
           </div>
         </div>
-        
+
         <div className="mt-8 text-center">
           <Link
-            to="/assessment/section/1"
+            to="/assessment/user-info"
             className="inline-block bg-[#B13BFF] text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-600 transition-colors"
           >
             Begin Assessment

@@ -24,8 +24,11 @@ export interface UserDemographics {
   age?: string;
   gender?: string;
   sexualOrientation?: string;
+  race?: string;
   relationshipStatus?: string;
-  location?: string;
+  previousRelationships?: string;
+  relationshipGoals?: string;
+  additionalInfo?: string;
 }
 
 export interface AssessmentSection {
