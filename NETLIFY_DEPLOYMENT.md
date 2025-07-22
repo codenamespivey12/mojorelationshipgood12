@@ -72,20 +72,25 @@ NODE_ENV=production
 
 ### Common Issues
 
-1. **Build fails with "Cannot find module"**
+1. **"server.handler is undefined or not exported" Error**
+   - This was fixed by updating the server function to use CommonJS format
+   - Make sure `netlify/functions/server.js` uses `exports.handler`
+   - Ensure `vite.config.ts` has `serverModuleFormat: "cjs"`
+
+2. **Build fails with "Cannot find module"**
    - Make sure all dependencies are in `package.json`
    - Try clearing the build cache in Netlify
 
-2. **Environment variables not working**
+3. **Environment variables not working**
    - Double-check variable names (case-sensitive)
    - Make sure there are no extra spaces
    - Redeploy after adding variables
 
-3. **Functions not working**
-   - Check that `netlify/functions/server.ts` exists
+4. **Functions not working**
+   - Check that `netlify/functions/server.js` exists
    - Verify the build command includes the postbuild step
 
-4. **Database connection issues**
+5. **Database connection issues**
    - Ensure your Neon database allows connections from Netlify
    - Check that the DATABASE_URL is correct
 
