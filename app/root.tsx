@@ -5,9 +5,17 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import type { LinksFunction } from "@remix-run/node";
+import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
+import { ClerkApp } from "@clerk/remix";
+import { rootAuthLoader } from "@clerk/remix/ssr.server";
+import { useEffect } from "react";
 
 import "./tailwind.css";
+import { applyMaterialTheme } from "~/lib/material";
+
+export const loader = (args: LoaderFunctionArgs) => {
+  return rootAuthLoader(args);
+};
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -40,6 +48,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function App() {
+function App() {
+  useEffect(() => {
+    // Apply Material Web theme on client-side
+    applyMaterialTheme();
+  }, []);
+
   return <Outlet />;
 }
+
+export default ClerkApp(App);

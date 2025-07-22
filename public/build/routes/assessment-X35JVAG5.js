@@ -1,0 +1,1 @@
+import{c as t,l as i}from"/build/_shared/chunk-SWCJMSKJ.js";import{d as o,g as e}from"/build/_shared/chunk-DLUJ32DX.js";i();var r=o(e(),1);function n(){return(0,r.jsx)("div",{className:"min-h-screen bg-gradient-to-br from-[#090040] via-[#471396] to-[#B13BFF]",children:(0,r.jsx)("div",{className:"container mx-auto px-4 py-8",children:(0,r.jsx)(t,{})})})}export{n as default};
