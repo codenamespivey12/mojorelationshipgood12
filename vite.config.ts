@@ -1,6 +1,10 @@
 import { vitePlugin as remix } from "@remix-run/dev";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
+import { config } from "dotenv";
+
+// Load environment variables
+config();
 
 declare module "@remix-run/node" {
   interface Future {
@@ -9,6 +13,10 @@ declare module "@remix-run/node" {
 }
 
 export default defineConfig({
+  define: {
+    // Make environment variables available to the client if needed
+    'process.env.CLERK_PUBLISHABLE_KEY': JSON.stringify(process.env.CLERK_PUBLISHABLE_KEY),
+  },
   plugins: [
     remix({
       future: {

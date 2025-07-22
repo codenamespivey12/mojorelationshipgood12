@@ -4,6 +4,9 @@
  * For more information, see https://remix.run/file-conventions/entry.server
  */
 
+// Load environment variables first, before any other imports
+import 'dotenv/config';
+
 import { PassThrough } from "node:stream";
 
 import type { AppLoadContext, EntryContext } from "@remix-run/node";
