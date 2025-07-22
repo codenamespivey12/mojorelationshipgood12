@@ -27,7 +27,7 @@ export default defineConfig({
         v3_lazyRouteDiscovery: true,
       },
       serverBuildFile: "index.js",
-      serverModuleFormat: "cjs",
+      serverModuleFormat: "esm",
     }),
     tsconfigPaths(),
   ],
