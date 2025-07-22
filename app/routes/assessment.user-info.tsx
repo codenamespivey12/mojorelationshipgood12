@@ -1,11 +1,13 @@
 import { Form, Link, useActionData, useNavigation } from "@remix-run/react";
 import { json, redirect } from "@remix-run/node";
 import type { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
-import { requireAuth } from "~/lib/auth";
+import { getOptionalAuth } from "~/lib/auth";
 import { useState } from "react";
 
 export async function loader(args: LoaderFunctionArgs) {
-  return requireAuth(args);
+  // Allow both authenticated and guest users
+  const userId = await getOptionalAuth(args);
+  return json({ userId });
 }
 
 export async function action({ request }: ActionFunctionArgs) {

@@ -1,9 +1,12 @@
 import { Outlet } from "@remix-run/react";
-import { requireAuth } from "~/lib/auth";
+import { getOptionalAuth } from "~/lib/auth";
 import type { LoaderFunctionArgs } from "@remix-run/node";
+import { json } from "@remix-run/node";
 
 export async function loader(args: LoaderFunctionArgs) {
-  return requireAuth(args);
+  // Allow both authenticated and guest users for assessment
+  const userId = await getOptionalAuth(args);
+  return json({ userId });
 }
 
 export default function AssessmentLayout() {
