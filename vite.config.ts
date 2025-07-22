@@ -23,15 +23,4 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
-  build: {
-    rollupOptions: {
-      external: [
-        "@mui/material",
-        "@emotion/react",
-        "@emotion/styled",
-        "framer-motion",
-        "@mui/icons-material"
-      ]
-    }
-  }
 });

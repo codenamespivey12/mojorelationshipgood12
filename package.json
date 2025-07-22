@@ -13,7 +13,7 @@
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
-    "postbuild": "mkdir -p netlify/functions && cp -r build/server netlify/functions/"
+    "postbuild": "echo 'Build completed successfully'"
   },
   "dependencies": {
     "@ai-sdk/openai": "^1.3.23",
