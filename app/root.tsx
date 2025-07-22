@@ -11,7 +11,6 @@ import { rootAuthLoader } from "@clerk/remix/ssr.server";
 import { useEffect } from "react";
 
 import "./tailwind.css";
-import { applyMaterialTheme } from "~/lib/material";
 
 export const loader = (args: LoaderFunctionArgs) => {
   return rootAuthLoader(args);
@@ -49,11 +48,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 function App() {
-  useEffect(() => {
-    // Apply Material Web theme on client-side
-    applyMaterialTheme();
-  }, []);
-
   return <Outlet />;
 }
 

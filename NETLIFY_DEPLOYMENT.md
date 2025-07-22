@@ -72,7 +72,12 @@ NODE_ENV=production
 
 ### Common Issues
 
-1. **"server.handler is undefined or not exported" Error**
+1. **"deepmerge is not a function" Error**
+   - This was caused by Material UI components being imported on the server side
+   - Fixed by temporarily removing Material UI dependencies and using HTML/CSS components
+   - The assessment flow now uses simple, fast HTML/CSS components instead of Material UI
+
+2. **"server.handler is undefined or not exported" Error**
    - This was fixed by updating the server function to use CommonJS format
    - Make sure `netlify/functions/server.js` uses `exports.handler`
    - Ensure `vite.config.ts` has `serverModuleFormat: "cjs"`

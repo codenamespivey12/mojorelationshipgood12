@@ -1,5 +1,5 @@
 // Material Web Components configuration and utilities
-import '@material/web/all.js';
+// import '@material/web/all.js'; // Commented out to avoid server-side issues
 
 // Material Web theme configuration
 export const materialTheme = {

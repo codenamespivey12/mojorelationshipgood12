@@ -1,11 +1,11 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion"; // Temporarily disabled for deployment
 import { Header } from "~/components/layout/Header";
 import { Footer } from "~/components/layout/Footer";
-import { AnimatedBackground } from "~/components/landing/AnimatedBackground";
-import { HeroSection } from "~/components/landing/HeroSection";
-import { FeatureCards } from "~/components/landing/FeatureCards";
+// import { AnimatedBackground } from "~/components/landing/AnimatedBackground"; // Temporarily disabled
+// import { HeroSection } from "~/components/landing/HeroSection"; // Temporarily disabled
+// import { FeatureCards } from "~/components/landing/FeatureCards"; // Temporarily disabled
 import { Button } from "~/components/ui/Button";
 
 export const meta: MetaFunction = () => {
