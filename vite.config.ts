@@ -18,7 +18,11 @@ export default defineConfig({
         v3_singleFetch: true,
         v3_lazyRouteDiscovery: true,
       },
+      serverBuildFile: "index.js",
     }),
     tsconfigPaths(),
   ],
+  ssr: {
+    noExternal: ["@mui/material", "@emotion/react", "@emotion/styled"],
+  },
 });
