@@ -8,6 +8,23 @@ exports.handler = async (event, context) => {
   if (!handler) {
     try {
       const build = require("../../build/server/index.js");
+
+      // Validate build object
+      console.log("Build object keys:", Object.keys(build || {}));
+      console.log("Routes:", typeof build?.routes, build?.routes ? Object.keys(build.routes).length : 'undefined');
+      console.log("Assets manifest:", typeof build?.assets);
+      console.log("Entry module:", typeof build?.entry?.module);
+
+      if (!build || !build.routes || typeof build.routes !== 'object' || Object.keys(build.routes).length === 0) {
+        console.error('Build validation failed:', {
+          hasBuild: !!build,
+          hasRoutes: !!build?.routes,
+          routesType: typeof build?.routes,
+          routesCount: build?.routes ? Object.keys(build.routes).length : 0
+        });
+        throw new Error('Invalid build object: missing or invalid routes');
+      }
+
       handler = createRequestHandler({
         build,
         mode: process.env.NODE_ENV || "production",
