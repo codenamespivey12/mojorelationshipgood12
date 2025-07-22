@@ -1,0 +1,38 @@
+name: relationshipmojo
+services:
+- name: web
+  source_dir: /
+  github:
+    repo: your-username/relationshipmojo
+    branch: main
+  run_command: npm start
+  environment_slug: node-js
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  routes:
+  - path: /
+  envs:
+  - key: NODE_ENV
+    value: production
+  - key: DATABASE_URL
+    value: ${DATABASE_URL}
+  - key: CLERK_PUBLISHABLE_KEY
+    value: ${CLERK_PUBLISHABLE_KEY}
+  - key: CLERK_SECRET_KEY
+    value: ${CLERK_SECRET_KEY}
+  - key: CLERK_SIGN_IN_URL
+    value: ${CLERK_SIGN_IN_URL}
+  - key: CLERK_SIGN_UP_URL
+    value: ${CLERK_SIGN_UP_URL}
+  - key: CLERK_AFTER_SIGN_IN_URL
+    value: ${CLERK_AFTER_SIGN_IN_URL}
+  - key: CLERK_AFTER_SIGN_UP_URL
+    value: ${CLERK_AFTER_SIGN_UP_URL}
+  - key: OPENAI_API_KEY
+    value: ${OPENAI_API_KEY}
+  - key: XAI_API_KEY
+    value: ${XAI_API_KEY}
+  - key: GOOGLE_AI_API_KEY
+    value: ${GOOGLE_AI_API_KEY}
+  - key: SESSION_SECRET
+    value: ${SESSION_SECRET}
