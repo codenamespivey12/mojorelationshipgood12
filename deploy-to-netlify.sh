@@ -17,13 +17,14 @@ git add .
 
 # Commit changes
 echo "💾 Committing changes..."
-git commit -m "Configure for Netlify deployment
+git commit -m "Fix Netlify deployment issues
 
-- Add Netlify adapter and configuration
-- Fix server function handler export
-- Configure CommonJS module format for serverless
-- Add deployment documentation
-- Include all 50 assessment questions from assessment.md"
+- Remove Material UI and framer-motion dependencies causing build errors
+- Simplify Button component to use CSS-only animations
+- Remove all Material UI imports from components
+- Fix deepmerge dependency issue for serverless deployment
+- Maintain full assessment functionality with 50 questions
+- Use simple, fast HTML/CSS components for better performance"
 
 # Push to repository
 echo "⬆️ Pushing to repository..."

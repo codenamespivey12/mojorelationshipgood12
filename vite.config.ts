@@ -23,7 +23,15 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
-  ssr: {
-    noExternal: ["@mui/material", "@emotion/react", "@emotion/styled"],
-  },
+  build: {
+    rollupOptions: {
+      external: [
+        "@mui/material",
+        "@emotion/react",
+        "@emotion/styled",
+        "framer-motion",
+        "@mui/icons-material"
+      ]
+    }
+  }
 });
